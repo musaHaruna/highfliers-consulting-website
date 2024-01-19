@@ -1,4 +1,4 @@
-/*-----------------------------------*\
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@300;400;500;600&family=Open+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;700;800;900&family=Poppins:wght@300;500;600;700;800;900&family=Roboto:wght@500&family=Rubik:ital,wght@1,300&display=swap'); /*-----------------------------------*\
   #style.css
 \*-----------------------------------*/
 
@@ -39,8 +39,8 @@
    * typography
    */
 
-  --ff-oswald: 'Oswald', sans-serif;
-  --ff-rubik: 'Rubik', sans-serif;
+  --ff-oswald: 'Poppins', sans-serif;
+  --ff-rubik: 'Poppins', sans-serif;
 
   --fs-40: 4rem;
   --fs-30: 3rem;
@@ -229,7 +229,7 @@ body {
 
 .h1 {
   color: var(--white);
-  font-size: var(--fs-40);
+  font-size: 55px;
 }
 
 .h2,
@@ -288,6 +288,31 @@ body {
   object-fit: cover;
 }
 
+.tab-content {
+  display: none;
+}
+
+.active {
+  background-color: #d69738;
+  color: #fff;
+}
+
+.active-icon {
+  color: #fff;
+}
+
+.active-text {
+  color: #fff;
+}
+
+.service-card {
+  background-color: var(--white);
+  padding: 60px 35px;
+  box-shadow: var(--shadow-1);
+  border-radius: var(--radius-8);
+  width: 90%;
+  margin: 0 auto;
+}
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -295,7 +320,7 @@ body {
   background-color: #d69738;
 }
 
-.tab-btn:hover .btn-icon ,
+.tab-btn:hover .btn-icon,
 .tab-btn:hover .btn-text {
   color: white;
 }
@@ -470,15 +495,6 @@ body {
 
 .gallery-card figure {
   height: 350px;
-}
-
-.service-card {
-  background-color: var(--white);
-  padding: 60px 35px;
-  box-shadow: var(--shadow-1);
-  border-radius: var(--radius-8);
-  width: 70%;
-  margin: 0 auto;
 }
 
 .service-card .card-icon {
@@ -1205,9 +1221,12 @@ a.contact-link:is(:hover, :focus) {
    */
 
   .service .grid-list {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
+  .service-card {
+    width: 80%;
+  }
   /**
    * PRICING
    */
@@ -1281,6 +1300,10 @@ a.contact-link:is(:hover, :focus) {
   /**
    * REUSED STYLE
    */
+
+  .service-card {
+    width: 80%;
+  }
 
   .container {
     max-width: 960px;
@@ -1412,6 +1435,15 @@ a.contact-link:is(:hover, :focus) {
   /**
    * CUSTOM PROPERTY
    */
+
+  .service-card {
+    background-color: var(--white);
+    padding: 60px 35px;
+    box-shadow: var(--shadow-1);
+    border-radius: var(--radius-8);
+    width: 50%;
+    margin: 0 auto;
+  }
 
   :root {
     /**

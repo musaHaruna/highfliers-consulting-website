@@ -59,7 +59,13 @@
       <div class="container">
 
         <a href="#" class="logo">
-          Logo
+
+          <div>
+            <img src="assets/images/logo.png" alt="" width="70px">
+          </div>
+
+
+
         </a>
 
         <nav class="navbar container" data-navbar>
@@ -384,17 +390,17 @@
             <ul class="tab-filter">
 
               <li class="tab-btn" onclick="showTab('our-mission')">
-                <button class="filter-btn active" data-filter-btn="all">
-                  <div class="btn-icon">
+                <button class="filter-btn select">
+                  <div class="btn-icon tab-icon">
                     <ion-icon name="rocket"></ion-icon>
                   </div>
 
-                  <p class="btn-text">Our Mission</p>
+                  <p class="btn-text tab-text">Our Mission</p>
                 </button>
               </li>
 
               <li class="tab-btn" onclick="showTab('our-vision')">
-                <button class="filter-btn" data-filter-btn="beauty-spa">
+                <button class="filter-btn select">
                   <div class="btn-icon">
                     <ion-icon name="globe"></ion-icon>
                   </div>
@@ -404,7 +410,7 @@
               </li>
 
               <li class="tab-btn" onclick="showTab('our-values')">
-                <button class="filter-btn" data-filter-btn="body-treatments">
+                <button class="filter-btn select">
                   <div class="btn-icon">
                     <ion-icon name="trophy"></ion-icon>
                   </div>
@@ -414,7 +420,7 @@
               </li>
             </ul>
 
-            <ul class="our-services grid-list our-mission">
+            <ul id="our-mission" class="our-services grid-list tab-content">
               <li data-filter="shaving">
                 <div class="pricing-card">
                   <div class="wrapper">
@@ -426,7 +432,7 @@
                 </div>
               </li>
             </ul>
-            <ul class="our-services grid-list our-vision">
+            <ul id="our-vision" class="our-services grid-list tab-content">
               <li data-filter="shaving">
                 <div class="pricing-card">
                   <div class="wrapper">
@@ -439,7 +445,7 @@
               </li>
             </ul>
 
-            <ul class="our-services grid-list our-values">
+            <ul id="our-values" class="our-services grid-list tab-content">
               <li data-filter="shaving">
                 <div class="pricing-card">
                   <div class="wrapper">
@@ -751,11 +757,6 @@
       <div class="footer-top">
 
         <div class="footer-brand">
-
-          <a href="#" class="logo">
-            Logo
-          </a>
-
           <form action="" class="input-wrapper">
 
             <input type="email" name="email_address" placeholder="Enter Your Email" required class="email-field">
