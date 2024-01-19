@@ -245,6 +245,10 @@ body {
   font-size: var(--fs-24);
 }
 
+.qualification {
+  font-size: 14px;
+}
+
 .btn {
   color: var(--white);
   background-color: var(--indian-yellow);
@@ -332,6 +336,7 @@ body {
 
 .card-text.title {
   font-size: 16px;
+  line-height: 1.4;
 }
 
 .card-text.p {
@@ -1423,7 +1428,7 @@ a.contact-link:is(:hover, :focus) {
 
   .gallery .grid-list.gallery-list {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
