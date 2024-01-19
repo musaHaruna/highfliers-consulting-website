@@ -296,6 +296,10 @@ body {
   display: none;
 }
 
+
+.section-text.italic {
+  font-style: italic;
+}
 .active {
   background-color: #d69738;
   color: #fff;
@@ -1299,7 +1303,9 @@ a.contact-link:is(:hover, :focus) {
 
   .service .grid-list.services {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: start;
   }
 
   /**
@@ -1446,7 +1452,8 @@ a.contact-link:is(:hover, :focus) {
     padding: 60px 35px;
     box-shadow: var(--shadow-1);
     border-radius: var(--radius-8);
-    width: 50%;
+    width: 100%;
+    align-self: center;
     margin: 0 auto;
   }
 
