@@ -292,11 +292,27 @@ body {
   object-fit: cover;
 }
 
+.card-text.desc {
+  font-size: 11px;
+}
 .tab-content {
   display: none;
 }
 
+.see-more {
+  cursor: pointer;
+}
 
+.see-more:hover {
+  color: #d69738;
+}
+.inner-content {
+  text-align: left;
+}
+
+.content-hidden {
+  display: none;
+}
 .section-text.italic {
   font-style: italic;
 }
@@ -341,6 +357,14 @@ body {
 .card-text.title {
   font-size: 16px;
   line-height: 1.4;
+}
+
+.height {
+  height: 1000px;
+}
+.card-text.pg {
+  margin-bottom: 0;
+  height: 160px;
 }
 
 .card-text.p {
@@ -524,8 +548,6 @@ body {
 }
 
 .service-card .card-text {
-  margin-block-end: 30px;
-
   text-align: left;
 }
 
@@ -675,16 +697,24 @@ body {
 
 .gallery-card .card-content {
   position: absolute;
-  inset: 15px;
+
   background-color: var(--eerie-black-2_85);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  margin-top: -2rem;
+
   opacity: 0;
   transform: scale(0.8);
   transition: var(--transition-2);
+  width: 90%;
+  height: 100%;
+}
+
+.card-content.desc {
+  padding: 10px;
 }
 
 .gallery-card:is(:hover, :focus-within) .card-content {
@@ -1453,6 +1483,7 @@ a.contact-link:is(:hover, :focus) {
     box-shadow: var(--shadow-1);
     border-radius: var(--radius-8);
     width: 100%;
+    height: auto;
     align-self: center;
     margin: 0 auto;
   }
@@ -1553,5 +1584,108 @@ a.contact-link:is(:hover, :focus) {
 
   .back-top-btn {
     padding: 15px;
+  }
+}
+
+.wrapper {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+}
+.wrapper i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active {
+  transform: translateY(-50%) scale(0.85);
+}
+.wrapper i:first-child {
+  left: -22px;
+}
+.wrapper i:last-child {
+  right: -22px;
+}
+.wrapper .carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.carousel :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  height: 342px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  border-radius: 8px;
+}
+.carousel .card .img {
+
+  height: 300px;
+  width: 300px;
+}
+.card .img img {
+  height: 300px;
+  width: 500px;
+
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+.carousel .card h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+.carousel .card span {
+  color: #6a6d78;
+  font-size: 1.31rem;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
   }
 }

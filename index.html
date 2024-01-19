@@ -22,8 +22,10 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
 
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <script src="script.js" defer></script>
   <!-- 
     - google font link
   -->
@@ -165,7 +167,7 @@
                   <a href="#" class="card-title">Capacity building</a>
                 </h3>
 
-                <p class="card-text">
+                <p class="card-text pg">
                   <strong>
                     Training and Development:
                   </strong> Designing and delivering training programs to improve the skills and knowledge of
@@ -178,19 +180,26 @@
                   Offering programs to cultivate leadership skills among executives and
                   managers.
                   <br>
+
+                  <br>
+                <p id="content1" class="inner-content content-hidden">
                   <strong>
                     Organizational Development:
                   </strong>
+                  <br>
                   Assisting in the development and implementation of strategies to improve
                   overall
                   organizational effectiveness.
+                  <strong>Organizational Assessments:</strong>
+                  Evaluating an organization's current capabilities, strengths, and weaknesses.
+                  <br>
+                  <strong>Training Needs Assessment:</strong>
+                  Identifying skill gaps and developing plans to address them through
+                  training initiatives.
 
                 </p>
-
-                <a href="#" class="card-btn" aria-label="more">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-
+                <span class="see-more" onclick="toggleContent('content1', this)">See more...</span>
+                </p>
               </div>
             </li>
 
@@ -206,7 +215,7 @@
                   <a href="#" class="card-title">Management consulting</a>
                 </h3>
 
-                <p class="card-text">
+                <p class="card-text pg">
                   <strong>
                     Strategic Planning:
                   </strong>
@@ -216,8 +225,8 @@
                     Operational Improvement:
                   </strong>
                   Identifying and implementing process improvements to enhance efficiency and effectiveness.
-
                   <br>
+                <p id="content2" class="inner-content content-hidden">
                   <strong>Change Management:</strong>
                   Helping organizations navigate and manage change initiatives within their structures.
                   <br>
@@ -232,11 +241,12 @@
                   </strong>
                   Assisting with HR-related issues, including talent management, employee engagement, and workforce
                   planning.
-                </p>
-                <a href="#" class="card-btn" aria-label="more">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
 
+
+                </p>
+                <span class="see-more" onclick="toggleContent('content2', this)">See more...</span>
+
+                </p>
               </div>
             </li>
 
@@ -251,57 +261,29 @@
                   <a href="#" class="card-title">Advisory Services</a>
                 </h3>
 
-                <p class="card-text">
+                <p class="card-text pg">
                   <strong>Policy Advisory:</strong>
                   Offering guidance on policy formulation and implementation.
                   <br>
                   <strong>
                     Technology Advisory:
                   </strong>
-                  Providing advice on the adoption and integration of new technologies.
+                  Providing advice on the adoption and integration of new technologies and facilitating strategic
+                  counsel
+                  for seamless technology adoption.
                   <br>
+                <p id="content3" class="inner-content content-hidden">
                   <strong>Risk Management:</strong>
                   Assessing and managing risks associated with various aspects of business operations.
-
                 </p>
-
-                <a href="#" class="card-btn" aria-label="more">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-
+                <span class="see-more" onclick="toggleContent('content3', this)">See more...</span>
+                </p>
               </div>
             </li>
 
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <ion-icon name="stats-chart-outline"></ion-icon>
-                </div>
-
-                <h3 class="h3">
-                  <a href="#" class="card-title">Capacity Assessment</a>
-                </h3>
-
-                <p class="card-text">
-                  <strong>Organizational Assessments:</strong>
-                  Evaluating an organization's current capabilities, strengths, and weaknesses.
-                  <br>
-                  <strong>Training Needs Assessment:</strong>
-                  Identifying skill gaps and developing plans to address them through
-                  training initiatives.
-
-                </p>
-
-                <a href="#" class="card-btn" aria-label="more">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-
-              </div>
-            </li>
 
             <li>
-              <div class="service-card">
+              <div class="service-card see-more-card height">
 
                 <div class="card-icon">
                   <ion-icon name="people"></ion-icon>
@@ -311,17 +293,17 @@
                   <a href="#" class="card-title">Project Management</a>
                 </h3>
 
-                <p class="card-text">
+                <p class="card-text pg">
                   <strong>Project Planning:</strong>
                   Assisting in the development of project plans and timelines.
                   <br>
-                  <strong>Project Evaluation:</strong>
-                  Conducting evaluations to assess the success and impact of projects.
-                  <br>
                   <strong>Networking and Collaboration:</strong>
-
                   Facilitating Partnerships: Helping organizations connect with potential collaborators, partners, and
                   stakeholders.
+                  <br>
+                <p id="content4" class="inner-content content-hidden">
+                  <strong>Project Evaluation:</strong>
+                  Conducting evaluations to assess the success and impact of projects.
                   <br>
                   <strong>Networking Events:</strong>
                   Hosting events to facilitate networking opportunities among professionals and
@@ -338,13 +320,9 @@
                   <strong>Market Research:</strong>
                   Conducting studies to analyse market trends, customer preferences, and competitor
                   activities.
-
                 </p>
-
-                <a href="#" class="card-btn" aria-label="more">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-
+                <span class="see-more" onclick="toggleContent('content4', this)">See more...</span>
+                </p>
               </div>
             </li>
 
@@ -486,11 +464,27 @@
                   <img src="./assets/images/gallery-1.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
                     class="img-cover">
                 </figure>
+                <div class="card-content desc">
+                  <p class="card-text desc">Juliana Omale holds a B.sc Business Admin from ABU Zaria in 2007, MBA from
+                    MAU
+                    Yola in 2013, a certificate in Leadership
+                    and Management in Health from University of Washington and currently pursuing a Ph.D in Business
+                    Administration at the
+                    American University of Nigeria Yola . She is a fellow of the Institute of Industrialist and
+                    corporate Administrators.
+                    She served in the Nigerian banking sector for 8 years and later in the Nigerian power sector in
+                    managerial capacities
+                    for 7 years. Her passion for service excellence, superior organizational performance and a better
+                    economic outlook led
+                    her to registering the entity “Innovate Highfliers Consulting Ltd” through which she believes that
+                    her passion will be
+                    realized.</p>
+                </div>
               </div>
               <div>
                 <br>
                 <h3 class="h3 card-title">Juliana A. Omale</h3>
-                <p class="card-text title">Chief Executive Officer</p>
+                <p class="card-text title">CEO</p>
                 <p class="qualification"> B.sc Bus Adm </p>
 
               </div>
@@ -504,6 +498,12 @@
                   <img src="./assets/images/team-3.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
                     class="img-cover">
                 </figure>
+                <div class="card-content desc">
+                  <p class="card-text desc">Alex Omale Idoko - Director- has an M.ed Science Education and is presently
+                    the CEO of Omalex Integrated Services Ltd,
+                    and Proprietor of Solace driving school Yola.
+                  </p>
+                </div>
               </div>
               <div>
                 <br>
@@ -521,6 +521,20 @@
                   <img src="./assets/images/team-1.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
                     class="img-cover">
                 </figure>
+                <div class="card-content desc">
+                  <p class="card-text desc">Ifeatu Uchenna -Director- Ifeatu has training and experience in the area of
+                    behavioural decision-making. His core skills
+                    include, among others, critical analysis, technical report-writing, and impact evaluation using
+                    social experiments. His
+                    on-going doctoral work applies experimental approaches in the social sciences to evaluate post civil
+                    conflict social and
+                    economic interventions deployed in socioeconomically vulnerable populations. He has technical
+                    expertise in Design of
+                    Experiments (DoE) in economics and social psychology as well as expert training in corporate
+                    financial strategy and
+                    business strategy more broadly.
+                  </p>
+                </div>
               </div>
               <div>
                 <br>
@@ -537,6 +551,11 @@
                   <img src="./assets/images/team-2.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
                     class="img-cover">
                 </figure>
+                <div class="card-content desc">
+                  <p class="card-text desc">Tella Iyiola Oladunjoye - Director- Professor of Forestry and DVC, First
+                    Technical University Ibadan
+                  </p>
+                </div>
               </div>
               <div>
                 <br>
@@ -555,6 +574,12 @@
                   <img src="./assets/images/team-4.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
                     class="img-cover">
                 </figure>
+                <div class="card-content desc">
+                  <p class="card-text desc">Lukas Barnabas Jauro- Director- Dr of Linguistics at Modibbo Adama
+                    University Yola
+
+                  </p>
+                </div>
               </div>
               <div>
                 <br>
@@ -571,6 +596,12 @@
                   <img src="./assets/images/team-5.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
                     class="img-cover">
                 </figure>
+                <div class="card-content desc">
+                  <p class="card-text desc">Adediran Mojisola - Company Secretary M.A Peace and Conflict is the highest.
+                    Legal Officer at Mottainai
+                    Recycling Limited
+                  </p>
+                </div>
               </div>
               <div>
                 <br>
@@ -614,98 +645,42 @@
               --Yola business leaders convergence
             </p>
           </div>
-          <ul class="grid-list gallery-cards">
+          <div class="wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <ul class="carousel">
+              <li class="card">
+                <div class="img"><img src="assets/images/gallery-2.jpg" alt="img" draggable="false"></div>
+
+              </li>
+              <li class="card">
+                <div class="img"><img src="assets/images/gallery-3.jpg" alt="img" draggable="false"></div>
+
+              </li>
+              <li class="card">
+                <div class="img"><img src="assets/images/gallery-4.jpg" alt="img" draggable="false"></div>
+
+              </li>
+              <li class="card">
+                <div class="img"><img src="assets/images/gallery-5.jpg" alt="img" draggable="false"></div>
+
+              </li>
+              <li class="card">
+                <div class="img"><img src="assets/images/gallery-6.jpg" alt="img" draggable="false"></div>
+
+              </li>
+              <li class="card">
+                <div class="img"><img src="assets/images/gallery-7.jpg" alt="img" draggable="false"></div>
+
+              </li>
+              <li class="card">
+                <div class="img"><img src="assets/images/gallery-8.jpg" alt="img" draggable="false"></div>
+
+              </li>
+            </ul>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+          </div>
 
 
-            <li>
-              <div class="gallery-card">
-                <figure class="card-banner img-holder" style="--width: 422; --height: 550;">
-                  <img src="./assets/images/gallery-7.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
-                    class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-text p">Yola business leaders convergence</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="gallery-card">
-                <figure class="card-banner img-holder" style="--width: 422; --height: 550;">
-                  <img src="./assets/images/gallery-2.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
-                    class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-text p">Yola business leaders convergence</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="gallery-card">
-                <figure class="card-banner img-holder" style="--width: 422; --height: 550;">
-                  <img src="./assets/images/gallery-3.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
-                    class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-text p">Yola business leaders convergence</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="gallery-card">
-                <figure class="card-banner img-holder" style="--width: 422; --height: 550;">
-                  <img src="./assets/images/gallery-4.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
-                    class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-text p">Yola business leaders convergence</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="gallery-card">
-                <figure class="card-banner img-holder" style="--width: 422; --height: 550;">
-                  <img src="./assets/images/gallery-5.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
-                    class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-text p">Yola business leaders convergence</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="gallery-card">
-                <figure class="card-banner img-holder" style="--width: 422; --height: 550;">
-                  <img src="./assets/images/gallery-6.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
-                    class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-text p">Yola business leaders convergence</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="gallery-card">
-                <figure class="card-banner img-holder" style="--width: 422; --height: 550;">
-                  <img src="./assets/images/gallery-7.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
-                    class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-text p">Yola business leaders convergence</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="gallery-card">
-                <figure class="card-banner img-holder" style="--width: 422; --height: 550;">
-                  <img src="./assets/images/gallery-8.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
-                    class="img-cover">
-                </figure>
-                <div class="card-content">
-                  <p class="card-text p">Yola business leaders convergence</p>
-                </div>
-              </div>
-            </li>
-          </ul>
 
         </div>
       </section>
