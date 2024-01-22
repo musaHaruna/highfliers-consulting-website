@@ -404,14 +404,14 @@ body {
 
 .header-bottom {
   position: absolute;
-  top: 45px;
+  top: 10px;
   left: 0;
   width: 100%;
   padding-block: 10px;
   z-index: 4;
 }
 
-.header-bottom.active {
+.header-bottom {
   position: fixed;
   top: 0;
   background-color: #fff;
@@ -485,7 +485,7 @@ body {
   margin-block: 25px;
 }
 .navbar-link {
-  color: #fff;
+  color: #01abf4;
   font-family: var(--ff-oswald);
   font-weight: var(--fw-600);
   text-transform: uppercase;
@@ -522,7 +522,6 @@ body {
 .hero-text {
   color: var(--white);
   margin-block: 15px 40px;
-  font-size: 14px;
 }
 
 /*-----------------------------------*\
@@ -537,6 +536,12 @@ body {
   margin-block: 15px 55px;
 }
 
+.list-flex {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .gallery-card figure {
   height: 350px;
 }
@@ -548,10 +553,18 @@ body {
   font-size: 70px;
   line-height: 1;
 }
+#title-card {
+  text-align: center;
+  margin: 14px 0;
+}
 
+.service-card.height {
+  height: 440px;
+}
 .service-card .card-title {
   margin-block: 15px 12px;
   transition: var(--transition-1);
+  text-align: center;
 }
 
 .service-card .card-title:is(:hover, :focus) {
@@ -596,7 +609,7 @@ body {
 
 .pricing .section-text {
   margin-block: 15px 55px;
-  color: var(--white_50);
+  color: #fff;
 }
 
 .pricing-tab-container {
@@ -652,14 +665,14 @@ body {
 }
 
 .pricing-card {
-  background-color: #4dc4f7;
+  background-color: rgba(52, 188, 246, 0.2);
   padding: 20px 25px;
   border-radius: var(--radius-5);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 15px;
-  color: #fff;
+  color: var(--eerie-black-3);
 }
 
 .pricing-card .card-banner {
@@ -793,6 +806,10 @@ body {
 
 select.input-field {
   appearance: none;
+}
+
+.title-card {
+  text-align: center;
 }
 
 select.input-field,
@@ -1133,10 +1150,6 @@ a.contact-link:is(:hover, :focus) {
     padding-block-start: calc(var(--section-padding) + 80px);
   }
 
-  .hero-text {
-    font-size: 14px;
-  }
-
   /**
    * PRICING
    */
@@ -1387,11 +1400,6 @@ a.contact-link:is(:hover, :focus) {
    * HERO
    */
 
-  .hero {
-    --section-padding: 150px;
-    padding-block-start: calc(var(--section-padding) + 100px);
-  }
-
   .hero-title,
   .hero-text {
     max-width: 600px;
@@ -1411,6 +1419,10 @@ a.contact-link:is(:hover, :focus) {
 
   .pricing .grid-list {
     grid-template-columns: 1fr 1fr;
+  }
+
+  #about-us {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .pricing-card {
@@ -1924,3 +1936,56 @@ a.contact-link:is(:hover, :focus) {
     grid-auto-columns: 100%;
   }
 }
+
+/* Animations */
+.btn-container {
+  display: inline-block;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.btn-container.loaded {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #333; /* Change this to your desired text color */
+}
+
+.span {
+  display: inline-block;
+  color: #fff;
+}
+
+.ion-icon {
+  display: inline-block;
+
+  color: #fff;
+}
+
+.service-card {
+  opacity: 0;
+  transform: translateY(-200px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.service-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  .service-card-v2 {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .service-card-v2.show {
+      opacity: 1;
+      transform: scale(1);
+    }

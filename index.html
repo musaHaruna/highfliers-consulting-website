@@ -57,13 +57,13 @@
 
 
 
-    <div class="header-bottom" data-header>
+    <div class="header-bottom " data-header>
       <div class="container">
 
         <a href="#" class="logo">
 
           <div>
-            <img src="assets/images/logo.png" alt="" width="150px">
+            <img src="assets/images/logo.png" alt="" width="100px">
           </div>
 
 
@@ -131,12 +131,12 @@
             empower
             individuals and organizations, fostering positive change and growth in diverse sectors
           </p>
-
-          <a href="#services" class="btn has-before">
-            <span class="span">Explore Our Services</span>
-
-            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-          </a>
+          <div class="btn-container" id="btnContainer">
+            <a href="#services" class="btn has-before">
+              <span class="span">Explore Our Services</span>
+              <ion-icon name="arrow-forward" aria-hidden="true" class="ion-icon"></ion-icon>
+            </a>
+          </div>
 
         </div>
       </section>
@@ -253,7 +253,7 @@
             </li>
 
             <li>
-              <div class="service-card">
+              <div class="service-card ">
 
                 <div class="card-icon">
                   <ion-icon name="flower"></ion-icon>
@@ -357,89 +357,78 @@
             We are affordable and available at your call
           </p>
 
-          <div class="pricing-tab-container">
+          <ul class="grid-list services about" id="about-us">
 
-            <ul class="tab-filter">
+            <li class="service-card-v2">
+              <div class="service-card height">
 
-              <li class="tab-btn" onclick="showTab('our-mission')">
-                <button class="filter-btn select">
-                  <div class="btn-icon tab-icon">
-                    <ion-icon name="rocket"></ion-icon>
-                  </div>
-
-                  <p class="btn-text tab-text">Our Mission</p>
-                </button>
-              </li>
-
-              <li class="tab-btn" onclick="showTab('our-vision')">
-                <button class="filter-btn select">
-                  <div class="btn-icon">
-                    <ion-icon name="globe"></ion-icon>
-                  </div>
-
-                  <p class="btn-text">Our Vision</p>
-                </button>
-              </li>
-
-              <li class="tab-btn" onclick="showTab('our-values')">
-                <button class="filter-btn select">
-                  <div class="btn-icon">
-                    <ion-icon name="trophy"></ion-icon>
-                  </div>
-
-                  <p class="btn-text">Our values </p>
-                </button>
-              </li>
-            </ul>
-
-            <ul id="our-mission" class="our-services grid-list tab-content">
-              <li data-filter="shaving">
-                <div class="pricing-card">
-                  <div class="wrapper">
-                    <p class="card-text">To build human capacity in areas of entrepreneurship, education, management and
-                      general human resource practices for
-                      effective and efficient achievement of organizational goals and objective through training and
-                      research.</p>
-                  </div>
+                <div class="card-icon">
+                  <ion-icon name="rocket"></ion-icon>
                 </div>
-              </li>
-            </ul>
-            <ul id="our-vision" class="our-services grid-list tab-content">
-              <li data-filter="shaving">
-                <div class="pricing-card">
-                  <div class="wrapper">
-                    <p class="card-text">
-                      To become a global icon in the consulting industry through excellence and
-                      market leadership
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
 
-            <ul id="our-values" class="our-services grid-list tab-content">
-              <li data-filter="shaving">
-                <div class="pricing-card">
-                  <div class="wrapper">
-                    <p class="card-text">
-                      <strong>Integrity</strong>
-                      <br>
-                      <strong>Service excellence</strong>
-                      <br>
-                      <strong>
-                        Team spirit
-                      </strong>
-                      <br>
-                      <strong>
-                        Respect
-                      </strong>
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
+                <h3 class="h3">
+                  <a id="title-card">Our mission</a>
+                </h3>
 
-          </div>
+                <p class="card-text ">
+                  To build human capacity in areas of entrepreneurship, education, management and
+                  general human resource practices for
+                  effective and efficient achievement of organizational goals and objective through training and
+                  research
+              </div>
+            </li>
+
+            <li class="service-card-v2">
+              <div class="service-card height">
+
+                <div class="card-icon">
+
+                  <ion-icon name="globe"></ion-icon>
+                </div>
+
+                <h3 class="h3">
+                  <a id="title-card">Our vision</a>
+                </h3>
+
+                <p class="card-text ">
+
+                  To become a global icon in the consulting industry through excellence and
+                  market leadership
+                </p>
+              </div>
+            </li>
+            <li class="service-card-v2">
+              <div class="service-card height">
+
+                <div class="card-icon">
+
+                  <ion-icon name="trophy"></ion-icon>
+                </div>
+
+                <h3 class="h3">
+                  <a id="title-card">Our values</a>
+                </h3>
+
+                <p class="card-text ">
+                <div class="list-flex">
+                  <ion-icon name="ellipse"></ion-icon> Integrity
+                </div>
+                <div class="list-flex">
+                  <ion-icon name="ellipse"></ion-icon> Service exellence
+                </div>
+                <div class="list-flex">
+                  <ion-icon name="ellipse"></ion-icon> Team spirit
+                </div>
+                <div class="list-flex">
+                  <ion-icon name="ellipse"></ion-icon> Respect
+                </div>
+
+
+                </p>
+              </div>
+            </li>
+        </div>
+        </ul>
       </section>
 
 
@@ -467,7 +456,7 @@
                     class="img-cover">
                 </figure>
                 <div class="card-content">
-                  <p class="card-text">Juliana Omale holds a B.sc Business Admin from ABU Zaria in 2007, MBA from
+                  <p class="card-text">B.sc Business Admin from ABU Zaria in 2007, MBA from
                     MAU
                     Yola in 2013, a certificate in Leadership
                     and Management in Health from University of Washington and currently pursuing a Ph.D in Business
@@ -501,7 +490,7 @@
                     class="img-cover">
                 </figure>
                 <div class="card-content desc">
-                  <p class="card-text desc">Alex Omale Idoko - Director- has an M.ed Science Education and is presently
+                  <p class="card-text desc">M.ed Science Education and is presently
                     the CEO of Omalex Integrated Services Ltd,
                     and Proprietor of Solace driving school Yola.
                   </p>
@@ -524,8 +513,7 @@
                     class="img-cover">
                 </figure>
                 <div class="card-content ">
-                  <p class="card-text ">Ifeatu Uchenna -Director- Ifeatu has training and experience in the area of
-                    behavioural decision-making. His core skills
+                  <p class="card-text "> Core skills
                     include, among others, critical analysis, technical report-writing, and impact evaluation using
                     social experiments. His
                     on-going doctoral work applies experimental approaches in the social sciences to evaluate post civil
@@ -554,7 +542,7 @@
                     class="img-cover">
                 </figure>
                 <div class="card-content desc">
-                  <p class="card-text desc">Tella Iyiola Oladunjoye - Director- Professor of Forestry and DVC, First
+                  <p class="card-text desc">Professor of Forestry and DVC, First
                     Technical University Ibadan
                   </p>
                 </div>
@@ -577,7 +565,7 @@
                     class="img-cover">
                 </figure>
                 <div class="card-content desc">
-                  <p class="card-text desc">Lukas Barnabas Jauro- Director- Dr of Linguistics at Modibbo Adama
+                  <p class="card-text desc">Dr of Linguistics at Modibbo Adama
                     University Yola
 
                   </p>
@@ -599,7 +587,7 @@
                     class="img-cover">
                 </figure>
                 <div class="card-content desc">
-                  <p class="card-text desc">Adediran Mojisola - Company Secretary M.A Peace and Conflict is the highest.
+                  <p class="card-text desc">M.A Peace and Conflict is the highest.
                     Legal Officer at Mottainai
                     Recycling Limited
                   </p>
@@ -714,8 +702,7 @@
 
           <div>
             <p class="section-text italic">
-              --Team building training for employees of Command Day Secondary School Army Barracks jimeta Yola and Kim
-              standard group of schools  Yola.
+              --Team building training for employees of Command Day Secondary School Army Barracks jimeta Yola
           </div>
           <div class="carousel-wrapper carousel-wrapper-section3" id="carouselSection3">
             <i id="leftSection3" class="fa-solid fa-angle-left"></i>

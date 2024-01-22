@@ -419,3 +419,53 @@ carouselWrapperSection3.addEventListener('mouseenter', () =>
   clearTimeout(timeoutIdSection3)
 )
 carouselWrapperSection3.addEventListener('mouseleave', autoPlaySection3)
+
+document.addEventListener('DOMContentLoaded', function () {
+  var btnContainer = document.getElementById('btnContainer')
+
+  function handleScroll() {
+    var scrollPosition = window.scrollY || document.documentElement.scrollTop
+
+    if (scrollPosition > 50) {
+      btnContainer.classList.add('loaded')
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll)
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+  var serviceCards = document.querySelectorAll('.service-card')
+
+  function handleScroll() {
+    var scrollPosition = window.scrollY || document.documentElement.scrollTop
+
+    serviceCards.forEach(function (card) {
+      if (scrollPosition > card.offsetTop - window.innerHeight + 200) {
+        card.classList.add('show')
+      }
+    })
+  }
+
+  window.addEventListener('scroll', handleScroll)
+  handleScroll() // Trigger the animation for elements already in the viewport
+})
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var serviceCardsV2 = document.querySelectorAll('.service-card-v2')
+
+    function handleScroll() {
+      var scrollPosition = window.scrollY || document.documentElement.scrollTop
+
+      if (scrollPosition > 1900) {
+        serviceCardsV2.forEach(function (card) {
+          card.classList.add('show')
+        })
+
+        window.removeEventListener('scroll', handleScroll) // Remove the event listener after animation
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+  })
