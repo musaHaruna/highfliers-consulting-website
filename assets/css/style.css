@@ -268,6 +268,11 @@ body {
   overflow: hidden;
 }
 
+.card-content .card-text {
+  font-size: 11px;
+  padding: 10px;
+}
+
 .btn::before {
   background-color: var(--eerie-black-1);
   inset: 0;
@@ -406,12 +411,13 @@ body {
   z-index: 4;
 }
 
-.header-bottom.active {
+.header-bottom {
   position: fixed;
   top: 0;
-  background-color: var(--rich-black-fogra-39);
+  background-color: #fff;
   transform: translateY(-100%);
   animation: slideIn 0.5s ease forwards;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes slideIn {
@@ -448,7 +454,7 @@ body {
 }
 
 .nav-toggle-btn {
-  color: var(--white);
+  color: var(--black_30);
   font-size: 40px;
 }
 
@@ -458,7 +464,8 @@ body {
   top: 100%;
   left: 15px;
   right: 15px;
-  background-color: var(--rich-black-fogra-39);
+  background-color: #fff;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
   max-height: 0;
   overflow: hidden;
   transition: 0.15s var(--cubic-out);
@@ -470,16 +477,11 @@ body {
 }
 
 .navbar-list {
-  border-block-start: 1px solid var(--jet);
   margin-block: 25px;
 }
 
-.navbar-item {
-  border-block-end: 1px solid var(--jet);
-}
-
 .navbar-link {
-  color: var(--white);
+  color: #0380f1;
   font-family: var(--ff-oswald);
   font-weight: var(--fw-600);
   text-transform: uppercase;
@@ -488,8 +490,12 @@ body {
   transition: var(--transition-1);
 }
 
+.navbar-link:hover {
+  color: #01abf4;
+}
+
 .navbar-link:is(:hover, :focus) {
-  color: var(--indian-yellow);
+  color: #01abf4;
 }
 
 /*-----------------------------------*\
@@ -690,7 +696,6 @@ body {
 .gallery-card .card-banner .img-cover {
   transition: var(--transition-2);
 }
-
 .gallery-card:is(:hover, :focus-within) .card-banner .img-cover {
   transform: scale(1.1);
 }
@@ -995,7 +1000,6 @@ a.contact-link:is(:hover, :focus) {
 
 .copyright-link {
   display: inline-block;
-  color: #01abf4;
 }
 
 /*-----------------------------------*\
@@ -1284,7 +1288,7 @@ a.contact-link:is(:hover, :focus) {
   }
 
   .gallery-card .card-content {
-    inset: 30px;
+    inset: 5px;
   }
 
   /**
@@ -1357,10 +1361,6 @@ a.contact-link:is(:hover, :focus) {
 
   .header-top {
     max-width: 1020px;
-  }
-
-  .header-bottom {
-    padding-block: 20px;
   }
 
   .navbar,
@@ -1688,117 +1688,234 @@ a.contact-link:is(:hover, :focus) {
 }
 
 .carousel-wrapper {
-    max-width: 1100px;
-    width: 100%;
-    position: relative;
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
 }
 
 .carousel-wrapper i {
-    top: 50%;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    font-size: 1.25rem;
-    position: absolute;
-    text-align: center;
-    line-height: 50px;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-    transform: translateY(-50%);
-    transition: transform 0.1s linear;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
 }
 
 .carousel-wrapper i:active {
-    transform: translateY(-50%) scale(0.85);
+  transform: translateY(-50%) scale(0.85);
 }
 
 .carousel-wrapper i:first-child {
-    left: -22px;
+  left: -22px;
 }
 
 .carousel-wrapper i:last-child {
-    right: -22px;
+  right: -22px;
 }
 
 .carousel-section2 {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: calc((100% / 3) - 12px);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 16px;
-    border-radius: 8px;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 .carousel-section2::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .carousel-section2.no-transition {
-    scroll-behavior: auto;
+  scroll-behavior: auto;
 }
 
 .carousel-section2.dragging {
-    scroll-snap-type: none;
-    scroll-behavior: auto;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
 }
 
 .carousel-section2.dragging .card-section2 {
-    cursor: grab;
-    user-select: none;
+  cursor: grab;
+  user-select: none;
 }
 
 .carousel-section2 :where(.card-section2, .img-section2) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-section2 {
-    scroll-snap-align: start;
-    height: 342px;
-    list-style: none;
-    background: #fff;
-    cursor: pointer;
-    padding-bottom: 15px;
-    flex-direction: column;
-    border-radius: 8px;
+  scroll-snap-align: start;
+  height: 342px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  border-radius: 8px;
 }
 
 .card-section2 .img-section2 {
-    height: 300px;
-    width: 300px;
+  height: 300px;
+  width: 300px;
 }
 
 .card-section2 .img-section2 img {
-    height: 300px;
-    width: 500px;
-    object-fit: cover;
-    border: 4px solid #fff;
+  height: 300px;
+  width: 500px;
+  object-fit: cover;
+  border: 4px solid #fff;
 }
 
 .card-section2 h2 {
-    font-weight: 500;
-    font-size: 1.56rem;
-    margin: 30px 0 5px;
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
 }
 
 .card-section2 span {
-    color: #6a6d78;
-    font-size: 1.31rem;
+  color: #6a6d78;
+  font-size: 1.31rem;
 }
 
 @media screen and (max-width: 900px) {
-    .carousel-wrapper .carousel-section2 {
-        grid-auto-columns: calc((100% / 2) - 9px);
-    }
+  .carousel-wrapper .carousel-section2 {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .carousel-wrapper .carousel-section2 {
-        grid-auto-columns: 100%;
-    }
+  .carousel-wrapper .carousel-section2 {
+    grid-auto-columns: 100%;
+  }
+}
+
+/* four */
+.carousel-wrapper-section3 {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+}
+
+.carousel-wrapper-section3 i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+
+.carousel-wrapper-section3 i:active {
+  transform: translateY(-50%) scale(0.85);
+}
+
+.carousel-wrapper-section3 i:first-child {
+  left: -22px;
+}
+
+.carousel-wrapper-section3 i:last-child {
+  right: -22px;
+}
+
+.carousel-section3 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel-section3::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-section3.no-transition {
+  scroll-behavior: auto;
+}
+
+.carousel-section3.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.carousel-section3.dragging .card-section3 {
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel-section3 :where(.card-section3, .img-section3) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-section3 {
+  scroll-snap-align: start;
+  height: 342px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  border-radius: 8px;
+}
+
+.card-section3 .img-section3 {
+  height: 300px;
+  width: 300px;
+}
+
+.card-section3 .img-section3 img {
+  height: 300px;
+  width: 500px;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+
+.card-section3 h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+
+.card-section3 span {
+  color: #6a6d78;
+  font-size: 1.31rem;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel-wrapper-section3 .carousel-section3 {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .carousel-wrapper-section3 .carousel-section3 {
+    grid-auto-columns: 100%;
+  }
 }
