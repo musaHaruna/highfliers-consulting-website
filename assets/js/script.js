@@ -420,52 +420,50 @@ carouselWrapperSection3.addEventListener('mouseenter', () =>
 )
 carouselWrapperSection3.addEventListener('mouseleave', autoPlaySection3)
 
-document.addEventListener('DOMContentLoaded', function () {
-  var btnContainer = document.getElementById('btnContainer')
+var btnContainer = document.getElementById('btnContainer')
 
-  function handleScroll() {
-    var scrollPosition = window.scrollY || document.documentElement.scrollTop
+function handleScroll1() {
+  var scrollPosition = window.scrollY || document.documentElement.scrollTop
 
-    if (scrollPosition > 50) {
-      btnContainer.classList.add('loaded')
-      window.removeEventListener('scroll', handleScroll)
-    }
+  if (scrollPosition > 50) {
+    btnContainer.classList.add('loaded')
+  } else {
+    btnContainer.classList.remove('loaded')
   }
+}
 
-  window.addEventListener('scroll', handleScroll)
-})
+window.addEventListener('scroll', handleScroll1)
 
-document.addEventListener('DOMContentLoaded', function () {
-  var serviceCards = document.querySelectorAll('.service-card')
+var serviceCards = document.querySelectorAll('.service-card1')
 
-  function handleScroll() {
-    var scrollPosition = window.scrollY || document.documentElement.scrollTop
+function handleScroll() {
+  var scrollPosition = window.scrollY || document.documentElement.scrollTop
 
-    serviceCards.forEach(function (card) {
-      if (scrollPosition > card.offsetTop - window.innerHeight + 200) {
-        card.classList.add('show')
-      }
+  serviceCards.forEach(function (card) {
+    if (scrollPosition > card.offsetTop - window.innerHeight + 200) {
+      card.classList.add('show')
+    } else {
+      card.classList.remove('show')
+    }
+  })
+}
+
+window.addEventListener('scroll', handleScroll)
+
+var serviceCardsV2 = document.querySelectorAll('.service-card-v2')
+
+function handleScroll2() {
+  var scrollPosition = window.scrollY || document.documentElement.scrollTop
+
+  if (scrollPosition > 1900) {
+    serviceCardsV2.forEach(function (card) {
+      card.classList.add('show')
+    })
+  } else {
+    serviceCardsV2.forEach(function (card) {
+      card.classList.remove('show')
     })
   }
+}
 
-  window.addEventListener('scroll', handleScroll)
-  handleScroll() // Trigger the animation for elements already in the viewport
-})
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var serviceCardsV2 = document.querySelectorAll('.service-card-v2')
-
-    function handleScroll() {
-      var scrollPosition = window.scrollY || document.documentElement.scrollTop
-
-      if (scrollPosition > 1900) {
-        serviceCardsV2.forEach(function (card) {
-          card.classList.add('show')
-        })
-
-        window.removeEventListener('scroll', handleScroll) // Remove the event listener after animation
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-  })
+window.addEventListener('scroll', handleScroll2)

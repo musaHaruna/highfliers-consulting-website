@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Lexend+Deca:wght@300;400;500;600&family=Open+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;700;800;900&family=Poppins:wght@300;500;600;700;800;900&family=Roboto:wght@500&family=Rubik:ital,wght@1,300&display=swap'); /*-----------------------------------*\
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap'); /*-----------------------------------*\
   #style.css
 \*-----------------------------------*/
 
@@ -39,8 +39,8 @@
    * typography
    */
 
-  --ff-oswald: 'Poppins', sans-serif;
-  --ff-rubik: 'Poppins', sans-serif;
+  --ff-oswald: 'Montserrat', sans-serif;
+  --ff-rubik: 'Montserrat', sans-serif;
 
   --fs-40: 4rem;
   --fs-30: 3rem;
@@ -568,7 +568,6 @@ body {
 }
 
 .service-card .card-title:is(:hover, :focus) {
-  color: var(--indian-yellow);
 }
 
 .service-card .card-text {
@@ -1968,24 +1967,24 @@ a.contact-link:is(:hover, :focus) {
   color: #fff;
 }
 
-.service-card {
+.service-card1 {
   opacity: 0;
   transform: translateY(-200px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.service-card.show {
+.service-card1.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-  .service-card-v2 {
-      opacity: 0;
-      transform: scale(0.8);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
+.service-card-v2 {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
 
-    .service-card-v2.show {
-      opacity: 1;
-      transform: scale(1);
-    }
+.service-card-v2.show {
+  opacity: 1;
+  transform: scale(1);
+}
