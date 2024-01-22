@@ -211,7 +211,7 @@ body {
 }
 
 .h1.hero-title {
-  color: #01abf4;
+  color: #fff;
 }
 .h1,
 .h2,
@@ -411,7 +411,7 @@ body {
   z-index: 4;
 }
 
-.header-bottom {
+.header-bottom.active {
   position: fixed;
   top: 0;
   background-color: #fff;
@@ -471,17 +471,21 @@ body {
   transition: 0.15s var(--cubic-out);
 }
 
+.header-bottom.active .container .navbar-list .navbar-item .navbar-link {
+  color: #01abf4;
+}
+
 .navbar.active {
   max-height: 321px;
   transition-duration: 0.5s;
 }
 
 .navbar-list {
+  border-block-start: 1px solid var(--jet);
   margin-block: 25px;
 }
-
 .navbar-link {
-  color: #0380f1;
+  color: #fff;
   font-family: var(--ff-oswald);
   font-weight: var(--fw-600);
   text-transform: uppercase;
@@ -518,6 +522,7 @@ body {
 .hero-text {
   color: var(--white);
   margin-block: 15px 40px;
+  font-size: 14px;
 }
 
 /*-----------------------------------*\
@@ -647,13 +652,14 @@ body {
 }
 
 .pricing-card {
-  background-color: var(--indian-yellow_10);
+  background-color: #4dc4f7;
   padding: 20px 25px;
   border-radius: var(--radius-5);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 15px;
+  color: #fff;
 }
 
 .pricing-card .card-banner {
@@ -976,7 +982,7 @@ textarea.input-field {
 }
 
 .footer-list-item ion-icon {
-  color: #01abf4;
+  color: #fff;
   font-size: 18px;
   flex-shrink: 0;
   --ionicon-stroke-width: 50px;
@@ -1128,7 +1134,7 @@ a.contact-link:is(:hover, :focus) {
   }
 
   .hero-text {
-    font-size: var(--fs-18);
+    font-size: 14px;
   }
 
   /**
@@ -1244,7 +1250,6 @@ a.contact-link:is(:hover, :focus) {
   }
 
   .section-text {
-    max-width: 50ch;
     margin-inline: auto;
   }
 
