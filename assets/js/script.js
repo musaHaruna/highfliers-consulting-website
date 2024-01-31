@@ -481,14 +481,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Hide body scroll
       document.body.style.overflow = 'hidden'
+
+      // Add zoomIn animation class
+      modalContent.classList.remove('zoomOut')
+      modalContent.classList.add('zoomIn')
     })
   })
 })
 
 function closeModal() {
   const modal = document.getElementById('modal')
-  modal.style.display = 'none'
+  const modalContent = document.getElementById('modal-content')
 
-  // Restore body scroll
-  document.body.style.overflow = 'auto'
+  // Add zoomOut animation class
+  modalContent.classList.remove('zoomIn')
+  modalContent.classList.add('zoomOut')
+
+  // Restore body scroll after the animation completes
+  setTimeout(function () {
+    modal.style.display = 'none'
+    document.body.style.overflow = 'auto'
+  }, 300) // Assuming the animation duration is 0.3 seconds
 }

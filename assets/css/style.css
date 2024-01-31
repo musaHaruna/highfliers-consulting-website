@@ -343,7 +343,6 @@ body {
   padding: 60px 35px;
   box-shadow: var(--shadow-1);
   border-radius: var(--radius-8);
-
   margin: 0 auto;
 }
 /*-----------------------------------*\
@@ -861,7 +860,11 @@ textarea.input-field {
 
 .form-btn:is(:hover, :focus) {
   background-color: var(--white);
-  color: var(--eerie-black-1);
+  color: var(--eerie-black-2);
+}
+
+.form-btn .span:hover {
+  color: var(--eerie-black-2);
 }
 
 /*-----------------------------------*\
@@ -2024,6 +2027,24 @@ a.contact-link:is(:hover, :focus) {
   overflow: hidden;
   width: 50%;
   border-radius: 8px;
+  animation: zoomIn 0.3s ease-in-out;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.8);
+  }
 }
 
 .modal-text {
@@ -2047,4 +2068,21 @@ a.contact-link:is(:hover, :focus) {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  /* Your styles for screens 600px and below go here */
+ .service-card {
+  background-color: var(--white);
+  padding: 60px 35px;
+  box-shadow: var(--shadow-1);
+  border-radius: var(--radius-8);
+  margin: 0 auto;
+  height: auto;
+}
+
+.content-hidden {
+  display: block;
+  margin-top: 12rem;
+}
 }
