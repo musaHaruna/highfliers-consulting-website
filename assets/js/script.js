@@ -467,3 +467,28 @@ function handleScroll2() {
 }
 
 window.addEventListener('scroll', handleScroll2)
+
+document.addEventListener('DOMContentLoaded', function () {
+  const galleryCards = document.querySelectorAll('.gallery-card')
+
+  galleryCards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      const modalContent = document.getElementById('modal-content')
+      modalContent.innerHTML = card.querySelector('.card-text.desc').innerHTML
+
+      const modal = document.getElementById('modal')
+      modal.style.display = 'block'
+
+      // Hide body scroll
+      document.body.style.overflow = 'hidden'
+    })
+  })
+})
+
+function closeModal() {
+  const modal = document.getElementById('modal')
+  modal.style.display = 'none'
+
+  // Restore body scroll
+  document.body.style.overflow = 'auto'
+}
