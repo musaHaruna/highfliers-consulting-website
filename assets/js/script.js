@@ -467,39 +467,3 @@ function handleScroll2() {
 }
 
 window.addEventListener('scroll', handleScroll2)
-
-document.addEventListener('DOMContentLoaded', function () {
-  const galleryCards = document.querySelectorAll('.gallery-card')
-
-  galleryCards.forEach(function (card) {
-    card.addEventListener('click', function () {
-      const modalContent = document.getElementById('modal-content')
-      modalContent.innerHTML = card.querySelector('.card-text.desc').innerHTML
-
-      const modal = document.getElementById('modal')
-      modal.style.display = 'block'
-
-      // Hide body scroll
-      document.body.style.overflow = 'hidden'
-
-      // Add zoomIn animation class
-      modalContent.classList.remove('zoomOut')
-      modalContent.classList.add('zoomIn')
-    })
-  })
-})
-
-function closeModal() {
-  const modal = document.getElementById('modal')
-  const modalContent = document.getElementById('modal-content')
-
-  // Add zoomOut animation class
-  modalContent.classList.remove('zoomIn')
-  modalContent.classList.add('zoomOut')
-
-  // Restore body scroll after the animation completes
-  setTimeout(function () {
-    modal.style.display = 'none'
-    document.body.style.overflow = 'auto'
-  }, 300) // Assuming the animation duration is 0.3 seconds
-}
