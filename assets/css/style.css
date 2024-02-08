@@ -340,7 +340,7 @@ body {
 
 .service-card {
   background-color: var(--white);
-  padding: 60px 35px;
+  padding: 30px 35px;
   box-shadow: var(--shadow-1);
   border-radius: var(--radius-8);
   margin: 0 auto;
@@ -1360,6 +1360,7 @@ a.contact-link:is(:hover, :focus) {
   .see-more {
     cursor: pointer;
     display: block;
+    margin-top: 2rem;
   }
 
   .service .grid-list.services {
@@ -2070,19 +2071,39 @@ a.contact-link:is(:hover, :focus) {
   cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
-  /* Your styles for screens 600px and below go here */
- .service-card {
-  background-color: var(--white);
-  padding: 60px 35px;
-  box-shadow: var(--shadow-1);
-  border-radius: var(--radius-8);
-  margin: 0 auto;
-  height: auto;
+@media only screen and (max-width: 999px) {
+  /* Your styles for screens 1024 pixels and below go here */
+  .grid-list.services.desktop {
+    display: none;
+  }
 }
 
-.content-hidden {
-  display: block;
-  margin-top: 12rem;
+@media only screen and (min-width: 1000px) {
+  /* Your styles for screens 1025 pixels and above go here */
+  .grid-list.services.mobile {
+    display: none;
+  }
 }
+
+@media screen and (max-width: 600px) {
+  /* Your styles for screens 600px and below go here */
+  .service-card {
+    background-color: var(--white);
+    padding: 25px 20px;
+    box-shadow: var(--shadow-1);
+    border-radius: var(--radius-8);
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .content-hidden {
+    display: block;
+    margin-top: 12rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  /* Your styles for screens 600px and below go here */
+  .h1 {
+    font-size: 40px;
+  }
 }
