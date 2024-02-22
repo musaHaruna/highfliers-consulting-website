@@ -432,6 +432,106 @@ function handleScroll1() {
   }
 }
 
+const carouselWrapperSection4 = document.querySelector(
+  '.carousel-wrapper-section4'
+)
+const carouselSection4 = document.querySelector('.carousel-section4')
+const firstCardWidthSection4 =
+  carouselSection4.querySelector('.card-section4').offsetWidth
+const arrowBtnsSection4 = document.querySelectorAll(
+  '.carousel-wrapper-section4 i'
+)
+const carouselChildrensSection4 = [...carouselSection4.children]
+
+let isDraggingSection4 = false,
+  isAutoPlaySection4 = true,
+  startXSection4,
+  startScrollLeftSection4,
+  timeoutIdSection4
+
+let cardPerViewSection4 = Math.round(
+  carouselSection4.offsetWidth / firstCardWidthSection4
+)
+
+carouselChildrensSection4
+  .slice(-cardPerViewSection4)
+  .reverse()
+  .forEach((card) => {
+    carouselSection4.insertAdjacentHTML('afterbegin', card.outerHTML)
+  })
+
+carouselChildrensSection4.slice(0, cardPerViewSection4).forEach((card) => {
+  carouselSection4.insertAdjacentHTML('beforeend', card.outerHTML)
+})
+
+carouselSection4.classList.add('no-transition')
+carouselSection4.scrollLeft = carouselSection4.offsetWidth
+carouselSection4.classList.remove('no-transition')
+
+arrowBtnsSection4.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    carouselSection4.scrollLeft +=
+      btn.id === 'leftSection4'
+        ? -firstCardWidthSection4
+        : firstCardWidthSection4
+  })
+})
+
+const dragStartSection4 = (e) => {
+  isDraggingSection4 = true
+  carouselSection4.classList.add('dragging')
+  startXSection4 = e.pageX
+  startScrollLeftSection4 = carouselSection4.scrollLeft
+}
+
+const draggingSection4 = (e) => {
+  if (!isDraggingSection4) return
+  carouselSection4.scrollLeft =
+    startScrollLeftSection4 - (e.pageX - startXSection4)
+}
+
+const dragStopSection4 = () => {
+  isDraggingSection4 = false
+  carouselSection4.classList.remove('dragging')
+}
+
+const infiniteScrollSection4 = () => {
+  if (carouselSection4.scrollLeft === 0) {
+    carouselSection4.classList.add('no-transition')
+    carouselSection4.scrollLeft =
+      carouselSection4.scrollWidth - 2 * carouselSection4.offsetWidth
+    carouselSection4.classList.remove('no-transition')
+  } else if (
+    Math.ceil(carouselSection4.scrollLeft) ===
+    carouselSection4.scrollWidth - carouselSection4.offsetWidth
+  ) {
+    carouselSection4.classList.add('no-transition')
+    carouselSection4.scrollLeft = carouselSection4.offsetWidth
+    carouselSection4.classList.remove('no-transition')
+  }
+
+  clearTimeout(timeoutIdSection4)
+  if (!carouselWrapperSection4.matches(':hover')) autoPlaySection4()
+}
+
+const autoPlaySection4 = () => {
+  if (window.innerWidth < 800 || !isAutoPlaySection4) return
+  timeoutIdSection4 = setTimeout(
+    () => (carouselSection4.scrollLeft += firstCardWidthSection4),
+    2500
+  )
+}
+autoPlaySection4()
+
+carouselSection4.addEventListener('mousedown', dragStartSection4)
+carouselSection4.addEventListener('mousemove', draggingSection4)
+document.addEventListener('mouseup', dragStopSection4)
+carouselSection4.addEventListener('scroll', infiniteScrollSection4)
+carouselWrapperSection4.addEventListener('mouseenter', () =>
+  clearTimeout(timeoutIdSection4)
+)
+carouselWrapperSection4.addEventListener('mouseleave', autoPlaySection4)
+
 window.addEventListener('scroll', handleScroll1)
 
 var serviceCards = document.querySelectorAll('.service-card1')
