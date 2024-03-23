@@ -567,3 +567,103 @@ function handleScroll2() {
 }
 
 window.addEventListener('scroll', handleScroll2)
+
+const carouselWrapperSection5 = document.querySelector(
+  '.carousel-wrapper-section5'
+)
+const carouselSection5 = document.querySelector('.carousel-section5')
+const firstCardWidthSection5 =
+  carouselSection5.querySelector('.card-section5').offsetWidth
+const arrowBtnsSection5 = document.querySelectorAll(
+  '.carousel-wrapper-section5 i'
+)
+const carouselChildrensSection5 = [...carouselSection5.children]
+
+let isDraggingSection5 = false,
+  isAutoPlaySection5 = true,
+  startXSection5,
+  startScrollLeftSection5,
+  timeoutIdSection5
+
+let cardPerViewSection5 = Math.round(
+  carouselSection5.offsetWidth / firstCardWidthSection5
+)
+
+carouselChildrensSection5
+  .slice(-cardPerViewSection5)
+  .reverse()
+  .forEach((card) => {
+    carouselSection5.insertAdjacentHTML('afterbegin', card.outerHTML)
+  })
+
+carouselChildrensSection5.slice(0, cardPerViewSection5).forEach((card) => {
+  carouselSection5.insertAdjacentHTML('beforeend', card.outerHTML)
+})
+
+carouselSection5.classList.add('no-transition')
+carouselSection5.scrollLeft = carouselSection5.offsetWidth
+carouselSection5.classList.remove('no-transition')
+
+arrowBtnsSection5.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    carouselSection5.scrollLeft +=
+      btn.id === 'leftSection5'
+        ? -firstCardWidthSection5
+        : firstCardWidthSection5
+  })
+})
+
+const dragStartSection5 = (e) => {
+  isDraggingSection5 = true
+  carouselSection5.classList.add('dragging')
+  startXSection5 = e.pageX
+  startScrollLeftSection5 = carouselSection5.scrollLeft
+}
+
+const draggingSection5 = (e) => {
+  if (!isDraggingSection5) return
+  carouselSection5.scrollLeft =
+    startScrollLeftSection5 - (e.pageX - startXSection5)
+}
+
+const dragStopSection5 = () => {
+  isDraggingSection5 = false
+  carouselSection5.classList.remove('dragging')
+}
+
+const infiniteScrollSection5 = () => {
+  if (carouselSection5.scrollLeft === 0) {
+    carouselSection5.classList.add('no-transition')
+    carouselSection5.scrollLeft =
+      carouselSection5.scrollWidth - 2 * carouselSection5.offsetWidth
+    carouselSection5.classList.remove('no-transition')
+  } else if (
+    Math.ceil(carouselSection5.scrollLeft) ===
+    carouselSection5.scrollWidth - carouselSection5.offsetWidth
+  ) {
+    carouselSection5.classList.add('no-transition')
+    carouselSection5.scrollLeft = carouselSection5.offsetWidth
+    carouselSection5.classList.remove('no-transition')
+  }
+
+  clearTimeout(timeoutIdSection5)
+  if (!carouselWrapperSection5.matches(':hover')) autoPlaySection5()
+}
+
+const autoPlaySection5 = () => {
+  if (window.innerWidth < 800 || !isAutoPlaySection5) return
+  timeoutIdSection5 = setTimeout(
+    () => (carouselSection5.scrollLeft += firstCardWidthSection5),
+    2500
+  )
+}
+autoPlaySection5()
+
+carouselSection5.addEventListener('mousedown', dragStartSection5)
+carouselSection5.addEventListener('mousemove', draggingSection5)
+document.addEventListener('mouseup', dragStopSection5)
+carouselSection5.addEventListener('scroll', infiniteScrollSection5)
+carouselWrapperSection5.addEventListener('mouseenter', () =>
+  clearTimeout(timeoutIdSection5)
+)
+carouselWrapperSection5.addEventListener('mouseleave', autoPlaySection5)
